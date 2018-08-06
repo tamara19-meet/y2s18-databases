@@ -8,8 +8,16 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-def add_article():
-	pass
+def add_article(Topic_name, Small_description, Rating):
+	Knowledge_object=Knowledge(
+		Topic_name=Topic_name,
+		Small_description= Small_description,
+		Rating= Rating)
+	session.add(Knowledge_object)
+	session.commit()
+    
+add_article("Biochemistry","the study of chemical processes within and relating to living organisms", 10)
+	
 
 def query_all_articles():
 	pass
