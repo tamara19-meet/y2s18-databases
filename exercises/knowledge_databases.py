@@ -37,12 +37,12 @@ print(query_article_by_topic("x"))
 def delete_article_by_topic(IalsoDoNotKnow):
 	session.query(Knowledge).filter_by(Topic_name=IalsoDoNotKnow).delete()
 	session.commit()
-delete_article_by_topic("Biochemistry")
+#delete_article_by_topic("Biochemistry")
 
 def delete_all_articles(Topic_name):
 	session.query(Knowledge).delete()
 	session.commit()
-delete_all_articles("Knowledge")
+#delete_all_articles("Knowledge")
 
 def edit_article_rating(article_title,updated_rating):
 	potato_object=session.query(Knowledge).filter_by(Topic_name=article_title).first()
@@ -50,4 +50,5 @@ def edit_article_rating(article_title,updated_rating):
 	session.commit()
 
 edit_article_rating("Biochemistry",8)
+print(query_all_articles())
 
